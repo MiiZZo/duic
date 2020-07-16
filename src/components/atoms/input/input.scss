@@ -1,59 +1,60 @@
 @import "../../../styles/variables.scss";
 
 .duicInput {
-    font-family: $mainFont;
-    font-size: $paragraphFontSize;
+  font-family: $mainFont;
+  font-size: $paragraphFontSize;
 
-    &-Label {
-        &_layout {
+  &-Label {
 
-            &_vertical {
-                display: flex;
-                flex-direction: column;
+    &_layout {
 
-                & > .duicInput-LabelText {
-                    padding-bottom: 5px;
-                    justify-content: flex-start;
-                }
-            }
-
-            &_horizontal {
-                display: flex;
-            }
-        }
-    }
-
-    &-LabelText {
-        font-size: $paragraphFontSize;
-        font-family: $mainFont;
-        padding-right: 5px;
+      &_vertical {
         display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        flex-direction: column;
 
-    &_variant {
-
-        &_default {
-            padding: 2px 0;
-            border-bottom: 2px solid $gray;
-
-            &:focus {
-                border-color: $blue;
-            }
+        & > .duicInput-LabelText {
+          padding-bottom: 5px;
+          justify-content: flex-start;
         }
+      }
 
-        &_outlined {
-            padding: 10px;
-            border: 1px solid $gray;
+      &_horizontal {
+        display: flex;
+      }
+    }
+  }
 
-            &:focus {
-                border-color: $blue;
-            }
-        }
+  &-LabelText {
+    font-size: $paragraphFontSize;
+    font-family: $mainFont;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_variant {
+
+    &_default {
+      padding: 2px 0;
+      border-bottom: 2px solid $gray;
+
+      &:focus {
+        border-color: $blue;
+      }
     }
 
-    &:disabled {
-        background: $liteGray;
+    &_outlined {
+      padding: 10px;
+      border: 1px solid $gray;
+
+      &:focus {
+        border-color: $blue;
+      }
     }
+  }
+
+  &:disabled {
+    background: $liteGray;
+  }
 }
