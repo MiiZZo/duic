@@ -1,7 +1,7 @@
 import React from "react";
 import { withKnobs, select, boolean, text } from "@storybook/addon-knobs";
-import "../components/index";
-import { Button, ButtonProps } from "../components/atoms/button/button";
+import "../../components/index";
+import { Button, ButtonProps } from "../../components/atoms/button/button";
 import { DownloadOutlined } from "@ant-design/icons";
 
 export const button = () => {

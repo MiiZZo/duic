@@ -1,0 +1,59 @@
+@import "../../../styles/variables.scss";
+
+.duicInput {
+    font-family: $mainFont;
+    font-size: $paragraphFontSize;
+
+    &-Label {
+        &_layout {
+
+            &_vertical {
+                display: flex;
+                flex-direction: column;
+
+                & > .duicInput-LabelText {
+                    padding-bottom: 5px;
+                    justify-content: flex-start;
+                }
+            }
+
+            &_horizontal {
+                display: flex;
+            }
+        }
+    }
+
+    &-LabelText {
+        font-size: $paragraphFontSize;
+        font-family: $mainFont;
+        padding-right: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &_variant {
+
+        &_default {
+            padding: 2px 0;
+            border-bottom: 2px solid $gray;
+
+            &:focus {
+                border-color: $blue;
+            }
+        }
+
+        &_outlined {
+            padding: 10px;
+            border: 1px solid $gray;
+
+            &:focus {
+                border-color: $blue;
+            }
+        }
+    }
+
+    &:disabled {
+        background: $liteGray;
+    }
+}
