@@ -1,0 +1,144 @@
+@import "../../../styles/variables.scss";
+
+.duicButton {
+    font-size: $paragraphFontSize;
+    font-family: $mainFont;
+    border-radius: 3px;
+    transition: .3s;
+
+    &-Icon {
+        &_position {
+
+            &_right {
+                margin-left: 10px;
+            }
+
+            &_left {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &_size {
+
+        &_default {
+            padding: 6.4px 15px 6.4px 15px;
+        }
+
+        &_large {
+            padding: 15px;
+        }
+
+        &_small {
+            padding: 5px;
+        }
+    }
+
+    &_block {
+        display: block;
+        width: 100%;
+    }
+
+    &_variant {
+
+        &_default {
+            color: $gray;
+            border: 1px solid $liteGray;
+
+            &:hover {
+                border-color: $liteGray;
+            }
+
+            &:active {
+                border-color: $deepGray;
+            }
+
+        }
+        
+        &_danger {
+            color: $whiteColor;
+            background: $red;
+
+            &:hover {
+                background: $liteRed;
+            }
+
+            &:active {
+                background: $deepRed;
+            }
+
+            &:focus {
+                box-shadow: 0 0 10px $deepRed;
+            }
+        }
+    
+        &_warning {
+            color: $whiteColor;
+            background: $orange;
+
+            &:hover {
+                background: $liteOrange;
+            }
+
+            &:active {
+                background: $deepOrange;
+            }
+
+            &:focus {
+                box-shadow: 0 0 10px $deepOrange;
+            }
+        }
+    
+        &_primary {
+            color: $whiteColor;
+            background: $blue;
+
+            &:hover {
+                background: $liteBlue;
+            }
+
+            &:active {
+                background: $deepBlue;
+            }
+
+            &:focus {
+                box-shadow: 0 0 10px $liteBlue;
+            }
+        }
+    
+        &_success {
+            color: $whiteColor;
+            background: $green;
+
+            &:hover {
+                background: $liteGreen;
+            }
+
+            &:active {
+                background: $deepGreen;
+            }
+
+            &:focus {
+                box-shadow: 0 0 10px $liteGreen;
+            }
+        }
+
+        &_dashed {
+            color: $gray;
+            background: none;
+            border: 1px dashed $gray;
+        }
+
+        &_text {
+            color: $gray;
+            border: none;
+            background: none;
+        }
+    }
+
+    &:disabled {
+        color: $gray;
+        border-color: $liteGray;
+        background: $liteGray;
+    }
+}
