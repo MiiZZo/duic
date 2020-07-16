@@ -14,8 +14,8 @@ export const button = () => {
     const size = select<ButtonProps["size"]>("size", ["large", "default", "small"], "default");
     const block = boolean("block", false);
     const disabled = boolean("disabled", false);
-    const prefixIcon = boolean("prefix icon", false);
-    const suffixIcon = boolean("suffix icon", false);
+    const prefixIcon = boolean("prefix icon (for example)", false);
+    const suffixIcon = boolean("suffix icon (for example)", false);
 
     return (
         <Button
