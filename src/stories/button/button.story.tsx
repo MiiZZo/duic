@@ -2,7 +2,7 @@ import React from "react";
 import { withKnobs, select, boolean, text } from "@storybook/addon-knobs";
 import "../../components/index";
 import { Button, ButtonProps } from "../../components/atoms/button/button";
-import { DownloadOutlined } from "@ant-design/icons";
+import { DownloadOutlined, WarningOutlined } from "@ant-design/icons";
 
 export const button = () => {
     const textValue = text("text", "Button");
@@ -12,17 +12,17 @@ export const button = () => {
         "primary"
     );
     const size = select<ButtonProps["size"]>("size", ["large", "default", "small"], "default");
-    const iconPosition = select<ButtonProps["iconPosition"]>("icon position", ["right", "left", (undefined as any)], "right");
     const block = boolean("block", false);
     const disabled = boolean("disabled", false);
-    const icon = boolean("icon", false);
+    const prefixIcon = boolean("prefix icon", false);
+    const suffixIcon = boolean("suffix icon", false);
 
     return (
         <Button
             variant={variant}
-            icon={icon ? <DownloadOutlined /> : undefined}
+            prefixIcon={prefixIcon ? <WarningOutlined /> : undefined}
+            suffixIcon={suffixIcon ? <DownloadOutlined /> : undefined}
             size={size}
-            iconPosition={iconPosition}
             block={block}
             disabled={disabled}
         >

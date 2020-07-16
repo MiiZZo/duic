@@ -10,11 +10,8 @@ export interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAtt
     block?: boolean;
     size?: ButtonSize;
     variant?: ButtonVariant;
-    icon?: React.ReactNode;
-    /**
-     * Default value "right"
-     */
-    iconPosition?: "right" | "left";
+    suffixIcon?: React.ReactNode;
+    prefixIcon?: React.ReactNode;
 }
 
 const cnButton = cn('duicButton');
@@ -22,11 +19,11 @@ const cnButton = cn('duicButton');
 export const Button: React.FC<ButtonProps> = 
 ({
     variant,
-    icon,
+    suffixIcon,
+    prefixIcon,
     size,
-    block, 
-    iconPosition, 
-    children, 
+    block,
+    children,
     ...props
 }) => {
     if (size === undefined) {
@@ -35,10 +32,6 @@ export const Button: React.FC<ButtonProps> =
 
     if (variant === undefined) {
         variant = "default";
-    }
-
-    if (iconPosition === undefined) {
-        iconPosition = "right";
     }
     
     const className = cnButton({
@@ -49,9 +42,9 @@ export const Button: React.FC<ButtonProps> =
 
     return (
         <button {...props} className={className}>
-            { (iconPosition === "left" && icon !== undefined) ? <span className={cnButton("Icon", { position: iconPosition })}>{icon}</span> : null}
+            { prefixIcon !== undefined ? <span className={cnButton("Icon", { position: "left" })}>{prefixIcon}</span> : null }
             { children !== undefined ? <span>{children}</span> : null }
-            { (iconPosition === "right" && icon !== undefined) ? <span className={cnButton("Icon", { position: iconPosition })}>{icon}</span> : null}
+            { suffixIcon !== undefined ? <span className={cnButton("Icon", { position: "right" })}>{suffixIcon}</span> : null }
         </button>
     )
 }
